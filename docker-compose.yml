@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  nginx:
+    build:
+      context: ./nginx/
+    container_name: nginx_container
+    networks:
+      - socialscope_network
+    depends_on:
+      - socialscope
+    ports: 
+      - "80:80"
+
+  socialscope:
+    build:
+      context: ./
+    container_name: socialscope_container
+    networks:
+      - socialscope_network
+    ports:
+      - "3000:3000"
+
+networks:
+  socialscope_network:
