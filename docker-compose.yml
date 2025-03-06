@@ -2,8 +2,7 @@ version: "3.8"
 
 services:
   nginx:
-    build:
-      context: ./nginx/
+    image: socialscope-nginx-image:latest
     container_name: nginx_container
     networks:
       - socialscope_network
@@ -13,8 +12,7 @@ services:
       - "80:80"
 
   socialscope:
-    build:
-      context: ./
+    image: socialscope-image
     container_name: socialscope_container
     networks:
       - socialscope_network
