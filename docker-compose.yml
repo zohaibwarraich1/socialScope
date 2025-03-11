@@ -2,7 +2,7 @@
 
 services:
   nginx:
-    image: socialscope-nginx-image:latest
+    image: zohaibwarraich/socialscope-nginx-image:latest
     container_name: nginx_container
     networks:
       - socialscope_network
@@ -12,7 +12,7 @@ services:
       - "80:80"
 
   socialscope:
-    image: socialscope-image
+    image: zohaibwarraich/socialscope-image
     container_name: socialscope_container
     networks:
       - socialscope_network
