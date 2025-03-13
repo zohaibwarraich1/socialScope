@@ -32,16 +32,6 @@ pipeline{
         }
     }
     post{
-        success {
-            script {
-                emailext (
-                    from: "raveeddogar10@gmail.com",
-                    subject: "Social Scope App build Successful",
-                    body: "Social Scope App build Successfully deployed",
-                    to: "muhammadzohaibwarraich0@gmail.com"
-                    )
-            }
-        }
         failure {
             script {
                 emailext (
