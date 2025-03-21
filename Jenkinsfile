@@ -17,10 +17,10 @@ pipeline{
         stage("Push on Docker-Hub"){
             steps{
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
-                    sh "docker tag socialscope-nginx-image:latest ${env.USERNAME}/socialscope-nginx-image:latest"
-                    sh "docker tag socialscope-image:latest ${env.USERNAME}/socialscope-image:latest"
-                    sh "docker push ${env.USERNAME}/socialscope-nginx-image:latest"
-                    sh "docker push ${env.USERNAME}/socialscope-image:latest"
+                    sh "docker tag socialscope-nginx-image:latest ${USERNAME}/socialscope-nginx-image:latest"
+                    sh "docker tag socialscope-image:latest ${USERNAME}/socialscope-image:latest"
+                    sh "docker push ${USERNAME}/socialscope-nginx-image:latest"
+                    sh "docker push ${USERNAME}/socialscope-image:latest"
                 }
                 echo "Pushed on Docker-Hub Successfully!"
             }
